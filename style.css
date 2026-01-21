@@ -1,0 +1,193 @@
+body {
+    font-family: "Motiva Sans", Sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #1b2838; /* Dark blue Steam background */
+    color: #c7d5e0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header {
+    background-color: #171a21;
+    padding: 15px 0;
+    text-align: center;
+    border-bottom: 1px solid #000;
+}
+
+.steam-logo img {
+    height: 36px; /* Adjust as needed */
+}
+
+.login-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.login-box {
+    background-color: #1a232f;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 400px;
+    overflow: hidden; /* To contain tabs correctly */
+}
+
+.login-tabs {
+    display: flex;
+    background-color: #24354b;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 15px 0;
+    border: none;
+    background-color: transparent;
+    color: #c7d5e0;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    border-bottom: 2px solid transparent;
+}
+
+.tab-button:hover {
+    background-color: #2a3d54;
+}
+
+.tab-button.active {
+    background-color: #1a232f;
+    border-bottom-color: #66c0f4;
+}
+
+.tab-content {
+    padding: 25px;
+    display: none; /* Hidden by default */
+}
+
+.tab-content.active {
+    display: block; /* Show active tab content */
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #8f98a0;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #000;
+    border-radius: 3px;
+    background-color: #323e4d;
+    color: #c7d5e0;
+    font-size: 14px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.remember-me input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.remember-me label {
+    margin: 0;
+    font-size: 14px;
+}
+
+.login-button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 3px;
+    background-color: #5d98cf; /* Steam blue */
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.login-button:hover {
+    background-color: #66c0f4;
+}
+
+.help-links a {
+    display: block;
+    color: #8f98a0;
+    text-decoration: none;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.help-links a:hover {
+    color: #66c0f4;
+}
+
+/* QR Code Section */
+.qr-code-section {
+    text-align: center;
+}
+
+.qr-code-section p {
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.qr-code-placeholder {
+    background-color: #323e4d;
+    border: 1px solid #000;
+    padding: 10px;
+    display: inline-block; /* For centering */
+    margin-bottom: 15px;
+}
+
+.qr-code-placeholder img {
+    display: block;
+    width: 200px;
+    height: 200px;
+}
+
+.qr-info {
+    font-size: 12px;
+    color: #8f98a0;
+    margin-bottom: 20px;
+}
+
+.refresh-qr-button {
+    background-color: #2a3d54;
+    color: #c7d5e0;
+    border: 1px solid #000;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.refresh-qr-button:hover {
+    background-color: #323e4d;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #171a21;
+    border-top: 1px solid #000;
+    font-size: 12px;
+    color: #556772;
+    margin-top: auto; /* Pushes footer to the bottom */
+}
