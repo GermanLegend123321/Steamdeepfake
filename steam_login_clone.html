@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anmelden bei Steam</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="https://store.cloudflare.steamstatic.com/public/images/v6/favicon.ico">
+</head>
+<body>
+    <div class="header">
+        <a href="https://store.steampowered.com/" class="steam-logo">
+            <img src="https://store.cloudflare.steamstatic.com/public/images/v6/logo_steam.png" alt="Steam">
+        </a>
+    </div>
+
+    <div class="login-container">
+        <div class="login-box">
+            <div class="login-tabs">
+                <button class="tab-button active" id="loginTab">ANMELDEN</button>
+                <button class="tab-button" id="qrTab">QR-CODE</button>
+            </div>
+
+            <!-- ANMELDEN Tab Content -->
+            <div class="tab-content active" id="loginContent">
+                <form action="#" method="POST" class="login-form">
+                    <label for="username">Steam-Accountname</label>
+                    <input type="text" id="username" name="username" required>
+
+                    <label for="password">Passwort</label>
+                    <input type="password" id="password" name="password" required>
+
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Passwort merken</label>
+                    </div>
+
+                    <button type="submit" class="login-button">ANMELDEN</button>
+                </form>
+
+                <div class="help-links">
+                    <a href="https://help.steampowered.com/de/wizard/HelpWithLogin?issueid=406">Hilfe, ich kann mich nicht anmelden</a>
+                    <a href="https://store.steampowered.com/join/">Steam beitreten</a>
+                </div>
+            </div>
+
+            <!-- QR-CODE Tab Content -->
+            <div class="tab-content" id="qrContent">
+                <div class="qr-code-section">
+                    <p>Scannen Sie den QR-Code mit der Steam Mobile-App zum Anmelden.</p>
+                    <div class="qr-code-placeholder">
+                        <!-- Placeholder for a dynamically generated QR code -->
+                        <img src="https://via.placeholder.com/200?text=Steam+QR+Code" alt="QR Code" id="dynamicQrCode">
+                    </div>
+                    <p class="qr-info">Öffnen Sie die Steam Mobile-App, tippen Sie auf das Benachrichtigungssymbol und scannen Sie diesen Code.</p>
+                    <button class="refresh-qr-button">QR-Code aktualisieren</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Valve Corporation. Alle Rechte vorbehalten. Alle Warenzeichen gehören ihren jeweiligen Besitzern in den USA und anderen Ländern.</p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginTab = document.getElementById('loginTab');
+            const qrTab = document.getElementById('qrTab');
+            const loginContent = document.getElementById('loginContent');
+            const qrContent = document.getElementById('qrContent');
+            const dynamicQrCode = document.getElementById('dynamicQrCode');
+            const refreshQrButton = document.querySelector('.refresh-qr-button');
+
+            loginTab.addEventListener('click', () => {
+                loginTab.classList.add('active');
+                qrTab.classList.remove('active');
+                loginContent.classList.add('active');
+                qrContent.classList.remove('active');
+            });
+
+            qrTab.addEventListener('click', () => {
+                qrTab.classList.add('active');
+                loginTab.classList.remove('active');
+                qrContent.classList.add('active');
+                loginContent.classList.remove('active');
+            });
+
+            refreshQrButton.addEventListener('click', () => {
+                // In a real application, this would fetch a new QR code from the server.
+                // For this static clone, we're just simulating a refresh.
+                const timestamp = new Date().getTime();
+                dynamicQrCode.src = `https://via.placeholder.com/200?text=Steam+QR+Code+${timestamp}`;
+                console.log('QR Code refreshed (simulated)');
+            });
+
+            // Handle form submission (conceptual - replace with actual backend logic)
+            document.querySelector('.login-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+                console.log(`Simulated Login Attempt - Username: ${username}, Password: ${password}`);
+                // Here, in a real scenario, you would send this to a backend server.
+                alert('Anmeldeversuch simuliert. (Dies ist eine statische Seite)');
+            });
+        });
+    </script>
+</body>
+</html>
